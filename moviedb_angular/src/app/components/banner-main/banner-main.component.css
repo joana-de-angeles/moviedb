@@ -1,8 +1,8 @@
 .main-banner{
     background-image: url('../../../assets/imgs/Barbie_ofilme.png');
-    background-size: cover; /* Para ajustar o tamanho da imagem ao tamanho da tela */
-    background-position: center; /* Para centralizar a imagem no plano de fundo */
-    background-repeat: no-repeat; /* Para evitar a repetição da imagem */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     height: 40vh;
     width: 1400px;
 }
@@ -57,6 +57,10 @@
 
 .main-banner-search button:hover{
     color: #032541;
+}
+
+.banner-oscar{
+    background: linear-gradient(to right, #272496, #617FBA, #8ECAD6);
 }
 
 
