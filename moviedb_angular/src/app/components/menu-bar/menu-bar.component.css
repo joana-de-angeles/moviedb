@@ -1,0 +1,45 @@
+/* Estilos CSS podem ser adicionados aqui para estilizar a navbar */
+body{
+    padding:0 0 0 0!important;
+}
+
+nav {
+    background-color: #032541;
+    color: #fff;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.menu_content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_first_content{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: visible;
+}
+
+.logo-menu img{
+    width: 154px;
+}

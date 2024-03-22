@@ -1,0 +1,62 @@
+.main-banner{
+    background-image: url('../../../assets/imgs/Barbie_ofilme.png');
+    background-size: cover; /* Para ajustar o tamanho da imagem ao tamanho da tela */
+    background-position: center; /* Para centralizar a imagem no plano de fundo */
+    background-repeat: no-repeat; /* Para evitar a repetição da imagem */
+    height: 40vh;
+    width: 1400px;
+}
+
+.container-content-banner{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 40px 80px;
+}
+
+.main-banner-title{
+    color: #fff;
+    
+}
+
+.main-banner-title h1{
+    font-size: 3rem;
+}
+
+.main-banner-title h2{
+    font-size: 2rem;
+}
+
+.main-banner-search {
+    display: flex;
+    margin-top: 40px;
+}
+
+.main-banner-search input {
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 45px;
+}
+
+.main-banner-search input::placeholder {
+    padding: 20px;
+}
+
+.main-banner-search button {
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: #0CC0CF;
+    margin-left: -35px;
+    cursor: pointer;
+}
+
+.main-banner-search button:hover{
+    color: #032541;
+}
+
+
