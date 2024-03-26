@@ -9,10 +9,12 @@ import { OverviewBoxComponent } from "./components/overview-box/overview-box.com
 import { TitleMainComponent } from "./components/title-main/title-main.component";
 import { BannerMainComponent } from "./components/banner-main/banner-main.component";
 import { SmallCardComponent } from "./components/small-card/small-card.component";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
