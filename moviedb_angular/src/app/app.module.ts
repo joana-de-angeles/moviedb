@@ -10,11 +10,13 @@ import { TitleMainComponent } from "./components/title-main/title-main.component
 import { BannerMainComponent } from "./components/banner-main/banner-main.component";
 import { SmallCardComponent } from "./components/small-card/small-card.component";
 import { HomeComponent } from './pages/home/home.component';
+import { ContentComponent } from './pages/content/content.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        ContentComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

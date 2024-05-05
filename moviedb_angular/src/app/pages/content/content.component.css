@@ -1,0 +1,21 @@
+.structure_content{
+    display: grid;
+    width: 1400px;
+
+    grid-template-areas: 
+    "big-card titulo"
+    "big-card content"
+    ;
+}
+
+.big-card{
+    grid-area: big-card;
+}
+
+.titulo{
+    grid-area: titulo;
+}
+
+.content{
+    grid-area: content;
+}
