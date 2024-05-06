@@ -1,3 +1,15 @@
+.bg-card_content{
+    border-bottom: 1px solid var(--primaryColor);
+    background-position: left calc((50vw - 170px) - 340px) top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg);
+}
+
+.bg-sectionCard-content{
+    background-image: linear-gradient(to right, rgba(73.5, 10.5, 10.5, 1) calc((50vw - 170px) - 340px), rgba(73.5, 10.5, 10.5, 0.84) 50%, rgba(73.5, 10.5, 10.5, 0.84) 100%);
+}
+
 .structure_content{
     display: grid;
     width: 1400px;
@@ -6,6 +18,11 @@
     "big-card titulo"
     "big-card content"
     ;
+
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+
+    margin: 80px 0;
 }
 
 .big-card{
