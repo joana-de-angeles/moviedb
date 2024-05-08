@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,9 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class BigCardComponent implements OnInit {
 
+  @Input() url:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.url + 'url big card')
   }
 
 }

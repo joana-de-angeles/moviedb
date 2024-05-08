@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,9 +10,14 @@ import { CommonModule } from '@angular/common';
 })
 export class SmallCardComponent implements OnInit {
 
+  @Input() name:string = '';
+  @Input() url:string = '';
+  @Input() date:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
