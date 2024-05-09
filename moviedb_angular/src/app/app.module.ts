@@ -11,12 +11,14 @@ import { BannerMainComponent } from "./components/banner-main/banner-main.compon
 import { SmallCardComponent } from "./components/small-card/small-card.component";
 import { HomeComponent } from './pages/home/home.component';
 import { ContentComponent } from './pages/content/content.component';
+import { ButtonComebackComponent } from './components/button-comeback/button-comeback.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        ContentComponent
+        ContentComponent,
+        ButtonComebackComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { movies } from 'src/app/data/movies';
 import { Movies } from 'src/app/types/movies.types';
 
@@ -25,4 +25,9 @@ export class ContentComponent implements OnInit {
       console.log(this.movieChosen)
     }
   }
+  
+  // comebackHome(){
+  //   this.router.navigate('home')
+  // }
+
 }

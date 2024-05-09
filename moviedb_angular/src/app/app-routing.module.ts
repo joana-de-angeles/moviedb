@@ -6,7 +6,7 @@ import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'home',
     component: HomeComponent,
   },
   {

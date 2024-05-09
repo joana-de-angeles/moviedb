@@ -15,12 +15,9 @@ export class HomeComponent implements OnInit {
   moviesData:Movies[] = movies
   urlsBannerBg:UrlsBackground[] = urlsBackground
 
-
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-    console.log(this.moviesData)
-    console.log(this.urlsBannerBg)
   }
 
   contentOverview(id:string){
