@@ -1,8 +1,8 @@
 .main-banner{
-    /* background-image: url('../../../assets/imgs/Barbie_ofilme.png'); */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    /* background-image: url('/assets/imgs/Barbie_ofilme.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 1400px;
 }
 
@@ -15,7 +15,7 @@
 
 .main-banner-title{
     color: #fff;
-    
+
 }
 
 .main-banner-title h1{

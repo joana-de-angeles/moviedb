@@ -14,11 +14,19 @@ export class HomeComponent implements OnInit {
 
   moviesData:Movies[] = movies
   urlsBannerBg:UrlsBackground[] = urlsBackground
+  randomUrl: any;
 
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.randomUrl = this.urlsBannerBg[this.bgRandomSwitch(0, this.urlsBannerBg.length - 1)];
   }
+
+  bgRandomSwitch(min:number, max:number){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
   contentOverview(id:string){
     this.router.navigate(['content', id])
