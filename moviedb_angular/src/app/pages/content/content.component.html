@@ -1,0 +1,29 @@
+<app-menu-bar></app-menu-bar>
+<app-button-comeback></app-button-comeback>
+<div class="bg-card_content">
+    <section class="bg-sectionCard-content">
+        <div class="structure_content">
+            <div class="big-card">
+                <app-big-card [url]="movieChosen.url"></app-big-card>
+            </div>
+            <div class="titulo">
+                <app-title-main 
+                [name]="movieChosen.name"
+                [age] = "movieChosen.age"
+                [date] = "movieChosen.date"
+                [genre] = "movieChosen.genre"
+                [time] = "movieChosen.time"
+                [rate] = "movieChosen.rate"
+                ></app-title-main>
+            </div>
+            <div class="content">
+                <app-overview-box 
+                    [tagline] = "movieChosen.tagline"
+                    [sinopse] = "movieChosen.sinopse"
+                    [creatorsOverview] = "movieChosen.creatorsOverview"
+                ></app-overview-box>
+            </div>
+        </div>
+    </section>
+</div>
+

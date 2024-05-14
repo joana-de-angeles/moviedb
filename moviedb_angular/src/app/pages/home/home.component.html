@@ -1,0 +1,16 @@
+<app-menu-bar></app-menu-bar>
+<app-banner-main [urlBackgroundImage]="randomUrl.url"></app-banner-main>
+<section>
+    <div class="small-card_titulo">
+        <h2>Tendência</h2>
+    </div>
+    <div class="container_small-card" >
+        <app-small-card
+        (click) = contentOverview(movie.id)
+        [name]="movie.name"
+        [url]="movie.url"
+        [date]="movie.date"
+        *ngFor="let movie of moviesData "></app-small-card>
+    </div>
+</section>
+

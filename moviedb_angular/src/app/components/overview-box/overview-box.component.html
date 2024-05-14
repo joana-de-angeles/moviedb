@@ -1,0 +1,19 @@
+<div class="box_overview_content">
+    <div class="tagline">
+        <h3>{{tagline}}</h3>
+    </div>
+    <div class="titulo_sinopse">
+        <h2>Sinopse</h2>
+    </div>
+    <div class="content_overview">
+        <p>
+            {{sinopse}}
+        </p>
+    </div>
+    <div class="creators_overview" >
+        <div class="box_creators" *ngFor = "let creator of creatorsOverview">
+            <p>{{ creator.name }}</p>
+            <p>{{ creator.position }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.box_overview_content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+}
+
+.tagline{
+    margin-bottom: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    font-style: italic;
+    opacity: .7;
+}
+
+.titulo_sinopse{
+    font-weight: 600;
+}
+
+.creators_overview{
+    display: flex;
+    gap: 150px;
+    margin-top: 30px;
+}
+
+.box_creators p:first-of-type {
+    font-weight: bold;
+}
