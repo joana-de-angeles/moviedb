@@ -12,6 +12,8 @@ import { SmallCardComponent } from "./components/small-card/small-card.component
 import { HomeComponent } from './pages/home/home.component';
 import { ContentComponent } from './pages/content/content.component';
 import { ButtonComebackComponent } from './components/button-comeback/button-comeback.component';
+import { MovieHttpInterceptor } from './interceptor/http-interceptor.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,13 @@ import { ButtonComebackComponent } from './components/button-comeback/button-com
         ContentComponent,
         ButtonComebackComponent
     ],
-    providers: [],
+    providers: [
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: MovieHttpInterceptor,
+        multi: true,
+      },
+    ],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -30,7 +38,8 @@ import { ButtonComebackComponent } from './components/button-comeback/button-com
         OverviewBoxComponent,
         TitleMainComponent,
         BannerMainComponent,
-        SmallCardComponent
+        SmallCardComponent,
+        HttpClientModule
     ]
 })
 export class AppModule { }
