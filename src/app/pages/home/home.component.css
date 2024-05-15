@@ -1,12 +1,21 @@
+.small-card {
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+}
+
 .container_small-card{
-    background-image: url('../../../assets/imgs/trending-bg.svg'); 
-    background-size: contain; 
-    background-position: bottom; 
+    background-image: url('../../../assets/imgs/trending-bg.svg');
+    background-size: contain;
+    background-position: bottom;
     background-repeat: no-repeat;
     display: flex;
-    width: 1400px;
+    max-width: 1400px;
     padding: 0 20px;
+    overflow: auto;
 }
+
+
 
 .small-card_titulo{
     align-self: baseline;

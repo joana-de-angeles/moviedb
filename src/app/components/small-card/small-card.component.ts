@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-small-card',
@@ -10,14 +11,18 @@ import { CommonModule } from '@angular/common';
 })
 export class SmallCardComponent implements OnInit {
 
-  @Input() name:string = '';
-  @Input() url:string = '';
-  @Input() date:string = '';
+  @Input() name: string = '';
+  @Input() url: string = '';
+  @Input() date: string = '';
+
+  imageURL: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    
+    this.imageURL = `${environment.imageUrl}/w500/${this.url}`;
+
+    console.log("🚀 ~ SmallCardComponent ~ ngOnInit ~ this.imageURL:", this.imageURL)
   }
 
 }
