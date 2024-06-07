@@ -53,3 +53,7 @@ export interface Genre {
   name: string;
 }
 
+export interface CertificationMovie {
+  iso_3166_1: string;
+  certification: string;
+}

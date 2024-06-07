@@ -7,15 +7,17 @@
                 <app-big-card *ngIf="movieDetail" [url]="movieDetail.poster_path ? movieDetail.poster_path : ''"></app-big-card>
             </div>
             <div class="titulo">
-                <app-title-main  *ngIf="movieDetail"
+                <app-title-main 
+                [age]="certificationMovie.certification"
                 [name]="movieDetail.title ? movieDetail.title : movieDetail.original_name ? movieDetail.original_name : ''"
                 [date]="movieDetail.release_date ? movieDetail.release_date : movieDetail.first_air_date ? movieDetail.first_air_date : ''"
                 [genres]="movieDetail.genres"
                 [time]="movieDetail.runtime"
+                [rating]="formatRating(movieDetail.vote_average)"
                 ></app-title-main>
             </div>
             <div class="content">
-                <app-overview-box *ngIf="movieDetail"
+                <app-overview-box 
                     [tagline]="movieDetail.tagline ? movieDetail.tagline : ''"
                     [sinopse]="movieDetail.overview ? movieDetail.overview : ''"
                 ></app-overview-box>
@@ -25,8 +27,6 @@
 </div>
 
 <!-- 
-
-[age] = "movieChosen.age"
 
 [rate] = "movieChosen.rate"
 

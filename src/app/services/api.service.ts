@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ApiResponse, Movie } from '../types/movies.types';
+import { ApiResponse, CertificationMovie, Movie } from '../types/movies.types';
 
 @Injectable({
   providedIn: 'root',
@@ -35,14 +35,21 @@ export class ApiService {
     );
   }
 
-  // getDetailsIdMovies(): any {
-  //   return this.http.get<any>(
-  //     `${environment.url}movie/786892?language=${environment.language_pt_BR}`
-  //   ).pipe(map((resp1) =>{
-  //     console.log(resp1)
-  //     return {
-  //       tagline: resp1.tagline
-  //     }
-  //   }))
-  // }
+  getCertificationDetails(movieId:number): Observable<CertificationMovie>{
+    const url = `${environment.url}movie/${movieId}/release_dates?language=${environment.language_pt_BR}`;
+    
+    return this.http.get<any>(url).pipe(
+      map((resp: any) => {
+        const brCertification = resp.results.find((item: any) => item.iso_3166_1 === "BR");
+        let certification = brCertification?.release_dates[0]?.certification || "";
+        if (certification === "") {
+          certification = "Livre"; // Defina o valor padrão aqui
+        }
+        return {
+          iso_3166_1: brCertification?.iso_3166_1 || "",
+          certification: certification
+        };
+      })
+    );
+  }
 }

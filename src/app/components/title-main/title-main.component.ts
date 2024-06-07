@@ -17,14 +17,12 @@ export class TitleMainComponent implements OnInit {
   @Input() date:string = '';
   @Input() genres:Genre[] = [];
   @Input() time:number = 0;
-  @Input() rate:number = 0;
+  @Input() rating:number = 0;
   
   constructor() { }
 
   ngOnInit(): void {
-    console.log("Genre" + this.genres)
-
-
+    console.log('Rating:', this.rating);
   }
-
+  
 }
