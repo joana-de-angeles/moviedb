@@ -43,7 +43,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
         SmallCardComponent,
         HttpClientModule,
         NgCircleProgressModule.forRoot({
-          // set defaults here
           radius: 0,
           titleFontSize:'',
           unitsFontSize:'',

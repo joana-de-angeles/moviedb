@@ -2,7 +2,7 @@
     <h1>{{name}}</h1>
     <div class="facts">
         <span class="certification">{{age}}</span>
-        <span class="release">{{date}}</span>
+        <span class="release">{{date | date: 'dd-MM-yyyy'}}</span>
         <span *ngFor="let g of genres" class="genre">{{g.name}}</span>
         <span class="runtime">{{time}} minutos</span>
     </div>
