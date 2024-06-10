@@ -13,7 +13,6 @@ export class OverviewBoxComponent implements OnInit {
 
   @Input() tagline:string = '';
   @Input() sinopse:string = '';
-  @Input() creatorsOverview:Creators[] = [];
 
   constructor() { }
 
