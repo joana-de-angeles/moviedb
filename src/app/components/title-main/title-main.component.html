@@ -3,11 +3,7 @@
     <div class="facts">
         <span class="certification">{{age}}</span>
         <span class="release">{{date}}</span>
-        <span class="genre">{{genre}}</span>
-        <span class="runtime">{{time}}</span>
-    </div>
-    <div class="rate_users">
-        <span class="progress_pie">{{rate}}%</span>
-        <span class="class_geral">Classificação geral dos utilizadores</span>
+        <span *ngFor="let g of genres" class="genre">{{g.name}}</span>
+        <span class="runtime">{{time}} minutos</span>
     </div>
 </div>

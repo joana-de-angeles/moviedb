@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { movies } from 'src/app/data/movies';
-import { Movies } from 'src/app/types/movies.types';
+import { ApiService } from 'src/app/services/api.service';
+import { ApiResponse, CertificationMovie, Movie } from 'src/app/types/movies.types';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-content',
@@ -10,24 +12,55 @@ import { Movies } from 'src/app/types/movies.types';
 })
 export class ContentComponent implements OnInit {
 
-  moviesData:Movies[] = movies
+  movieDetail!:Movie;
+  certificationMovie!:CertificationMovie;
   id:string | any = '';
+  urlCss:string = '';
+  rating:number = 0;
 
-  movieChosen!:Movies;
+  formatRating(rating: number): number {
+    return Math.round(rating * 1);
+  }
 
-  constructor(private route:ActivatedRoute) { 
+  constructor(private route:ActivatedRoute, private apiService: ApiService) { 
   }
 
   ngOnInit(): void {
-    if(this.route.snapshot.paramMap.get('id')){
-      this.id = this.route.snapshot.paramMap.get('id')
-      this.movieChosen = this.moviesData.filter((movie:Movies) => movie.id === this.id)[0]
-      console.log(this.movieChosen)
+
+    if (this.route.snapshot.paramMap.has('id')) {
+      this.id = this.route.snapshot.paramMap.get('id');
+      this.getDetailsMovies(this.id);
+      this.getCertificationMovies(this.id);
     }
   }
-  
-  // comebackHome(){
-  //   this.router.navigate('home')
-  // }
+
+  getDetailsMovies(movieId: string):void {
+    this.apiService.getMovieIdDetails(parseInt(movieId, 10)).subscribe({
+      next: (resp: Movie) => {
+        this.movieDetail = resp;
+        this.urlCss = `${environment.imageUrl}/w500/${this.movieDetail.backdrop_path}`;
+        this.rating = Math.round(this.movieDetail.vote_average * 10);
+        console.log("🚀 ~ ContentComponent ~ this.apiService.getMovieDetails ~ this.moviesData:", this.movieDetail)
+        console.log("🏅 ~ ContentComponent ~ this.rate:" + this.rating)
+        },
+        error: (err: any) => {
+          console.error(err);
+        },
+      },
+    );
+  }
+
+  getCertificationMovies(movieId: string):void {
+    this.apiService.getCertificationDetails(parseInt(movieId, 10)).subscribe({
+      next: (resp: CertificationMovie) => {
+        this.certificationMovie = resp;
+        console.log("🚀 ~ certification Data:", this.certificationMovie)
+        },
+        error: (err: any) => {
+          console.error(err);
+        },
+      },
+    );
+  }
 
 }

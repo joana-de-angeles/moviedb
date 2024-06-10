@@ -14,13 +14,15 @@ import { ContentComponent } from './pages/content/content.component';
 import { ButtonComebackComponent } from './components/button-comeback/button-comeback.component';
 import { MovieHttpInterceptor } from './interceptor/http-interceptor.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         ContentComponent,
-        ButtonComebackComponent
+        ButtonComebackComponent,
+        
     ],
     providers: [
       {
@@ -39,7 +41,21 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
         TitleMainComponent,
         BannerMainComponent,
         SmallCardComponent,
-        HttpClientModule
+        HttpClientModule,
+        NgCircleProgressModule.forRoot({
+          // set defaults here
+          radius: 0,
+          titleFontSize:'',
+          unitsFontSize:'',
+          outerStrokeWidth: 0,
+          innerStrokeWidth: 0,
+          outerStrokeColor: "",
+          animationDuration: 0,
+          showInnerStroke: false,
+          showSubtitle: false,
+          titleColor:'',
+          unitsColor:''
+        })
     ]
 })
 export class AppModule { }

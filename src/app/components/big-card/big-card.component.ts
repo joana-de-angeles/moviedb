@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-big-card',
@@ -12,10 +13,15 @@ export class BigCardComponent implements OnInit {
 
   @Input() url:string = '';
 
+  bigImageURL:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.url + 'url big card')
+
+    this.bigImageURL = `${environment.imageUrl}/w500/${this.url}`;
+
+    console.log("🚀 ~ SmallCardComponent ~ ngOnInit ~ this.imageURL:", this.bigImageURL)
   }
 
 }

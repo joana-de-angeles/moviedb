@@ -23,3 +23,20 @@
     margin-left: 60px;
 }
 
+/* Estiliza a barra de rolagem no Webkit/Blink (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 5px; /* Largura da barra de rolagem */
+  height: 12px;
+}
+
+/* Estiliza o polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4; /* Cor do polegar */
+  border-radius: 5px; /* Raio do canto do polegar */
+}
+
+/* Estiliza o fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor de fundo da barra de rolagem */
+}
+
