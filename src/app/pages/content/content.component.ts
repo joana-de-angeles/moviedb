@@ -19,8 +19,7 @@ export class ContentComponent implements OnInit {
   rating:number = 0;
 
   formatRating(rating: number): number {
-    // Lógica para formatar o rating, por exemplo:
-    return Math.round(rating * 10);
+    return Math.round(rating * 1);
   }
 
   constructor(private route:ActivatedRoute, private apiService: ApiService) { 

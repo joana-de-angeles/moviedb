@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ApiResponse, CertificationMovie, Movie } from '../types/movies.types';
+import { ApiResponse, CertificationMovie, Movie, TvShow } from '../types/movies.types';
 
 @Injectable({
   providedIn: 'root',
@@ -24,12 +24,25 @@ export class ApiService {
       );
   }
 
+  // getMovieAndTvDetails(movieId: number): Observable<{ movie: Movie, tvShow: TvShow }> {
+  //   const movieUrl = `${environment.url}movie/${movieId}?language=${environment.language_pt_BR}`;
+  //   const tvUrl = `${environment.url}tv/${movieId}?language=${environment.language_pt_BR}`;
+
+  //   const movieRequest = this.http.get<Movie>(movieUrl);
+  //   const tvRequest = this.http.get<TvShow>(tvUrl);
+
+  //   return forkJoin([movieRequest, tvRequest]).pipe(
+  //     map(([movieResp, tvResp]) => {
+  //       return { movie: movieResp, tvShow: tvResp };
+  //     })
+  //   );
+  // }
+
   getMovieIdDetails(movieId: number): Observable<Movie> {
     return this.http.get<any>(
       `${environment.url}movie/${movieId}?language=${environment.language_pt_BR}`
     ).pipe(
       map((resp1: any) => {
-        // Mapeie os dados da resposta para o modelo Movie
         return resp1 as Movie;
       })
     );
@@ -43,7 +56,7 @@ export class ApiService {
         const brCertification = resp.results.find((item: any) => item.iso_3166_1 === "BR");
         let certification = brCertification?.release_dates[0]?.certification || "";
         if (certification === "") {
-          certification = "Livre"; // Defina o valor padrão aqui
+          certification = "Livre"; 
         }
         return {
           iso_3166_1: brCertification?.iso_3166_1 || "",

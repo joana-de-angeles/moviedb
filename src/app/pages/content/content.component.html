@@ -8,13 +8,28 @@
             </div>
             <div class="titulo">
                 <app-title-main 
-                [age]="certificationMovie.certification"
-                [name]="movieDetail.title ? movieDetail.title : movieDetail.original_name ? movieDetail.original_name : ''"
-                [date]="movieDetail.release_date ? movieDetail.release_date : movieDetail.first_air_date ? movieDetail.first_air_date : ''"
-                [genres]="movieDetail.genres"
-                [time]="movieDetail.runtime"
-                [rating]="formatRating(movieDetail.vote_average)"
+                    [age]="certificationMovie.certification"
+                    [name]="movieDetail.title ? movieDetail.title : movieDetail.original_name ? movieDetail.original_name : ''"
+                    [date]="movieDetail.release_date ? movieDetail.release_date : movieDetail.first_air_date ? movieDetail.first_air_date : ''"
+                    [genres]="movieDetail.genres"
+                    [time]="movieDetail.runtime"
                 ></app-title-main>
+
+                <div class="rating_box">
+                    <circle-progress
+                        [percent]="formatRating(rating)"
+                        [radius]="40"
+                        [titleFontSize]="'20'"
+                        [unitsFontSize]="'20'"
+                        [outerStrokeWidth]="7"
+                        [outerStrokeColor]="'#78C000'"
+                        [titleColor]="'#FFF'"
+                        [unitsColor]="'#FFF'"
+                        [animation]="true"
+                        [animationDuration]="300"
+                    ></circle-progress>
+                    <span class="class_geral">Classificação geral dos utilizadores</span>
+                </div>
             </div>
             <div class="content">
                 <app-overview-box 

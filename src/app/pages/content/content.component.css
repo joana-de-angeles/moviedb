@@ -34,3 +34,15 @@
 .content{
     grid-area: content;
 }
+
+.class_geral{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.rating_box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
