@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiResponse, Movie, Movies } from 'src/app/types/movies.types';
+import { ApiResponse, Media, Movies } from 'src/app/types/movies.types';
 import { UrlsBackground } from 'src/app/types/urlsBackground';
 import { urlsBackground } from 'src/app/data/background-img';
 import { ApiService } from 'src/app/services/api.service';
@@ -12,7 +12,9 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
-  moviesData: Movie[] = [];
+  moviesData: Media[] = [];
+  tvsData: Media[] = [];
+
   urlsBannerBg:UrlsBackground[] = urlsBackground
   randomUrl: any;
 
@@ -21,6 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.randomUrl = this.urlsBannerBg[this.bgRandomSwitch(0, this.urlsBannerBg.length - 1)];
     this.getTrendingMovies();
+    this.getTrendingTvs();
   }
 
   bgRandomSwitch(min:number, max:number){
@@ -34,10 +37,23 @@ export class HomeComponent implements OnInit {
   }
 
   getTrendingMovies() {
-    this.apiService.getTrendingAll().subscribe({
+    this.apiService.getTrendingAllMovies().subscribe({
       next: (resp: ApiResponse) => {
         this.moviesData = resp.results;
-        console.log("🚀 ~ HomeComponent ~ this.apiService.getTrendingAll ~ this.moviesData:", this.moviesData)
+        console.log("🚀 ~ HomeComponent ~ this.apiService.getTrendingMovies ~ this.moviesData:", this.moviesData)
+        },
+        error: (err: any) => {
+          console.error(err);
+        },
+      },
+    );
+  }
+
+  getTrendingTvs() {
+    this.apiService.getTrendingAllTv().subscribe({
+      next: (resp: ApiResponse) => {
+        this.tvsData = resp.results;
+        console.log("🍿 ~ HomeComponent ~ this.apiService.getTrendingTvs ~ this.TvsData:", this.tvsData)
         },
         error: (err: any) => {
           console.error(err);
