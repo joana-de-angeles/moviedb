@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { ApiResponse, CertificationMovie, Movie } from 'src/app/types/movies.types';
+import { ApiResponse, CertificationMovie, Media } from 'src/app/types/movies.types';
 import { environment } from 'src/environments/environment';
 
 
@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ContentComponent implements OnInit {
 
-  movieDetail!:Movie;
+  movieDetail!:Media;
   certificationMovie!:CertificationMovie;
   id:string | any = '';
   urlCss:string = '';
@@ -36,7 +36,7 @@ export class ContentComponent implements OnInit {
 
   getDetailsMovies(movieId: string):void {
     this.apiService.getMovieIdDetails(parseInt(movieId, 10)).subscribe({
-      next: (resp: Movie) => {
+      next: (resp: Media) => {
         this.movieDetail = resp;
         this.urlCss = `${environment.imageUrl}/w500/${this.movieDetail.backdrop_path}`;
         this.rating = Math.round(this.movieDetail.vote_average * 10);
