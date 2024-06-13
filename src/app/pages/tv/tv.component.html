@@ -1,15 +1,14 @@
-<app-menu-bar></app-menu-bar>
+<app-menu-bar [screen]="'tv'"></app-menu-bar>
 <app-banner-main [urlBackgroundImage]="randomUrl.url"></app-banner-main>
 <section class="small-card">
     <div class="small-card_titulo">
-        <h2>Tendência Filmes</h2>
+        <h2>Tendência Séries</h2>
     </div>
-    <div class="container_small-card" >
-        <app-small-card *ngFor="let tvShow of tvsData"
-            (click)="contentOverview('tv', tvShow.id)"
+    <div class="container_small-card">
+        <app-small-card *ngFor="let tvShow of tvsData" (click)="contentOverview('tv', tvShow.id)"
             [name]="tvShow.title ? tvShow.title : tvShow.original_name ? tvShow.original_name : ''"
             [url]="tvShow.poster_path ? tvShow.poster_path : ''"
             [date]="tvShow.release_date ? tvShow.release_date : tvShow.first_air_date ? tvShow.first_air_date : ''">
-    </app-small-card>
+        </app-small-card>
     </div>
 </section>
