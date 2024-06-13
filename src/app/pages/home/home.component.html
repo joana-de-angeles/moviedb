@@ -6,11 +6,11 @@
     </div>
     <div class="container_small-card" >
         <app-small-card *ngFor="let movie of moviesData"
-        (click) = contentOverview(movie.id)
-        [name]="movie.title ? movie.title : movie.original_name ? movie.original_name : ''"
-        [url]="movie.poster_path ? movie.poster_path : ''"
-        [date]="movie.release_date ? movie.release_date : movie.first_air_date ? movie.first_air_date : ''"
-        ></app-small-card>
+            (click)="contentOverview('movie', movie.id)"
+            [name]="movie.title ? movie.title : movie.original_name ? movie.original_name : ''"
+            [url]="movie.poster_path ? movie.poster_path : ''"
+            [date]="movie.release_date ? movie.release_date : movie.first_air_date ? movie.first_air_date : ''">
+    </app-small-card>
     </div>
 </section>
 

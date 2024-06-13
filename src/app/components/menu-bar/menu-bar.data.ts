@@ -3,18 +3,22 @@ import { PagesMenuBar } from "./menu-bar.types"
 export const listPagesMenuBar: PagesMenuBar[] = [
     {
         label: 'Filmes',
-        value: 'movies'
+        value: 'movies',
+        path: 'home/movies'
     },
     {
         label: 'Séries',
-        value: 'series'
+        value: 'series',
+        path: 'home/tv'
     },
     {
         label: 'Pessoas',
-        value: 'peoples'
+        value: 'peoples',
+        path: ''
     },
     {
         label: 'Mais',
-        value: 'more'
+        value: 'more',
+        path: ''
     }
 ]

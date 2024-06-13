@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.randomUrl = this.urlsBannerBg[this.bgRandomSwitch(0, this.urlsBannerBg.length - 1)];
     this.getTrendingMovies();
-    this.getTrendingTvs();
   }
 
   bgRandomSwitch(min:number, max:number){
@@ -32,28 +31,15 @@ export class HomeComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-  contentOverview(id: number){
-    this.router.navigate(['content', id])
-  }
+contentOverview(type: string, id: number) {
+  this.router.navigate(['/content', type, id]);
+}
 
   getTrendingMovies() {
     this.apiService.getTrendingAllMovies().subscribe({
       next: (resp: ApiResponse) => {
         this.moviesData = resp.results;
         console.log("🚀 ~ HomeComponent ~ this.apiService.getTrendingMovies ~ this.moviesData:", this.moviesData)
-        },
-        error: (err: any) => {
-          console.error(err);
-        },
-      },
-    );
-  }
-
-  getTrendingTvs() {
-    this.apiService.getTrendingAllTv().subscribe({
-      next: (resp: ApiResponse) => {
-        this.tvsData = resp.results;
-        console.log("🍿 ~ HomeComponent ~ this.apiService.getTrendingTvs ~ this.TvsData:", this.tvsData)
         },
         error: (err: any) => {
           console.error(err);

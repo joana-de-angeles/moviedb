@@ -47,6 +47,16 @@ export class ApiService {
     );
   }
 
+  getTvIdDetails(movieId: number): Observable<Media> {
+    return this.http.get<any>(
+      `${environment.url}tv/${movieId}?language=${environment.language_pt_BR}`
+    ).pipe(
+      map((resp1: any) => {
+        return resp1 as Media;
+      })
+    );
+  }
+
   getCertificationDetails(movieId:number): Observable<CertificationMovie>{
     const url = `${environment.url}movie/${movieId}/release_dates?language=${environment.language_pt_BR}`;
     

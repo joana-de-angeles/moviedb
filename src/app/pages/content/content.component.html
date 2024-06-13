@@ -1,18 +1,18 @@
 <app-menu-bar></app-menu-bar>
-<app-button-comeback></app-button-comeback>
+<app-button-comeback [type]="type"></app-button-comeback>
 <div class="bg-card_content" [style.background-image]="'url(' + urlCss + ')'">
     <section class="bg-sectionCard-content">
         <div class="structure_content">
             <div class="big-card">
-                <app-big-card *ngIf="movieDetail" [url]="movieDetail.poster_path ? movieDetail.poster_path : ''"></app-big-card>
+                <app-big-card *ngIf="contentDetail" [url]="contentDetail.poster_path ? contentDetail.poster_path : ''"></app-big-card>
             </div>
             <div class="titulo">
                 <app-title-main 
                     [age]="certificationMovie.certification"
-                    [name]="movieDetail.title ? movieDetail.title : movieDetail.original_name ? movieDetail.original_name : ''"
-                    [date]="movieDetail.release_date ? movieDetail.release_date : movieDetail.first_air_date ? movieDetail.first_air_date : ''"
-                    [genres]="movieDetail.genres"
-                    [time]="movieDetail.runtime"
+                    [name]="contentDetail.title ? contentDetail.title : contentDetail.original_name ? contentDetail.original_name : ''"
+                    [date]="contentDetail.release_date ? contentDetail.release_date : contentDetail.first_air_date ? contentDetail.first_air_date : ''"
+                    [genres]="contentDetail.genres"
+                    [time]="contentDetail.runtime"
                 ></app-title-main>
 
                 <div class="rating_box">
@@ -33,8 +33,8 @@
             </div>
             <div class="content">
                 <app-overview-box 
-                    [tagline]="movieDetail.tagline ? movieDetail.tagline : ''"
-                    [sinopse]="movieDetail.overview ? movieDetail.overview : ''"
+                    [tagline]="contentDetail.tagline ? contentDetail.tagline : ''"
+                    [sinopse]="contentDetail.overview ? contentDetail.overview : ''"
                 ></app-overview-box>
             </div>
         </div>

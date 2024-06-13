@@ -15,6 +15,7 @@ import { ButtonComebackComponent } from './components/button-comeback/button-com
 import { MovieHttpInterceptor } from './interceptor/http-interceptor.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { TvComponent } from './pages/tv/tv.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
         HomeComponent,
         ContentComponent,
         ButtonComebackComponent,
+        TvComponent,
         
     ],
     providers: [
