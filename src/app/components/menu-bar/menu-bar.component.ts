@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { listPagesMenuBar } from './menu-bar.data';
 import { PagesMenuBar } from './menu-bar.types';
@@ -10,14 +10,15 @@ import { PagesMenuBar } from './menu-bar.types';
   templateUrl: './menu-bar.component.html',
   styleUrls: ['./menu-bar.component.css']
 })
-export class MenuBarComponent implements OnInit {
-
+export class MenuBarComponent {
+  @Input() screen: string = '';
   listMenuBar: PagesMenuBar[] = listPagesMenuBar;
   sourceImageRightImg: string = 'assets/imgs/logo.svg';
+  optionSelected: string = '';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getFinalSegment(path: string): string {
+    const segments = path.split('/');
+    return segments[segments.length - 1];
   }
 
 }

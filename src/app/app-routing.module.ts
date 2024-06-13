@@ -7,18 +7,18 @@ import { TvComponent } from './pages/tv/tv.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     pathMatch: 'full',
     redirectTo: '/home/movies'
   },
   {
-    path:'home/movies',
+    path: 'home/movies',
     component: HomeComponent,
   },
-  
+
   {
     path: 'content/:type/:id',
-    component:ContentComponent
+    component: ContentComponent
   },
   {
     path: 'home/tv',

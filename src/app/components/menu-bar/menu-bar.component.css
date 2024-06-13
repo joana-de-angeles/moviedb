@@ -6,7 +6,7 @@ body{
 nav {
     background-color: #032541;
     color: #fff;
-    padding: 10px;
+    padding: 14px;
 }
 
 ul {
@@ -24,6 +24,10 @@ li a {
     padding: 14px 16px;
     font-weight: 500;
     text-decoration: none;
+}
+
+.li-selected {
+    border-bottom: 2px solid white;
 }
 
 .menu_content{
