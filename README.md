@@ -1,10 +1,10 @@
-# 🎬 MoviedbAngular
+# 🎬 Moviedb Angular
 
-Welcome to **MoviedbAngular**! This project is a movie and TV series catalog application built using Angular, TypeScript, and the REST API from [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api). The application allows users to browse, search, and view details of various movies and TV series.
+Welcome to **moviedb**! This project is a movie and TV series catalog application built using Angular, TypeScript, and the REST API from [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api). The application allows users to browse, search, and view details of various movies and TV series.
 
 ## 📖 Introduction
 
-**MoviedbAngular** is an Angular application that serves as a catalog for movies and TV series. It fetches data from The Movie Database (TMDb) API and displays it in a user-friendly interface. Users can explore trending movies, search for their favorite titles, and view detailed information about each movie or TV show.
+**moviedb** is an Angular application that serves as a catalog for movies and TV series. It fetches data from The Movie Database (TMDb) API and displays it in a user-friendly interface. Users can explore trending movies, search for their favorite titles, and view detailed information about each movie or TV show.
 
 ## ✨ Features
 
@@ -29,8 +29,8 @@ To install and run this project locally, follow these steps:
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/your-username/MoviedbAngular.git
-    cd MoviedbAngular
+    git clone https://github.com/your-username/moviedb.git
+    cd moviedb
     ```
 
 2. **Install dependencies**
@@ -52,7 +52,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ---
 
-Thank you for checking out **MoviedbAngular**! If you have any questions or suggestions, feel free to open an issue or contact me.
+Thank you for checking out **moviedb**! If you have any questions or suggestions, feel free to open an issue or contact me.
 
 Best regards,  
 Joana D'Angeles
