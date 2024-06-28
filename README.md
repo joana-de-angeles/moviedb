@@ -1,58 +1,27 @@
-# 🎬 MoviedbAngular
+# MoviedbAngular
 
-Welcome to **MoviedbAngular**! This project is a movie and TV series catalog application built using Angular, TypeScript, and the REST API from [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api). The application allows users to browse, search, and view details of various movies and TV series.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 
-## 📖 Introduction
+## Development server
 
-**MoviedbAngular** is an Angular application that serves as a catalog for movies and TV series. It fetches data from The Movie Database (TMDb) API and displays it in a user-friendly interface. Users can explore trending movies, search for their favorite titles, and view detailed information about each movie or TV show.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## ✨ Features
+## Code scaffolding
 
-- 🔍 Browse trending movies and TV series
-- 📋 View detailed information about movies and TV series, including ratings, release dates, and overviews
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## 🎥 Demo
+## Build
 
-Here is a quick preview of the application:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-![Project Demo](/src/assets/gif/gif-angular-moviedb-canva.gif)
+## Running unit tests
 
-## 💻 Technologies Used
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-- **Angular**: A platform for building mobile and desktop web applications
-- **TypeScript**: A superset of JavaScript that adds static types
-- **REST API**: Used to fetch data from TMDb
+## Running end-to-end tests
 
-## 🚀 Installation
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-To install and run this project locally, follow these steps:
-
-1. **Clone the repository**
-    ```bash
-    git clone https://github.com/your-username/MoviedbAngular.git
-    cd MoviedbAngular
-    ```
-
-2. **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3. **Run the application**
-    ```bash
-    ng serve
-    ```
-
-4. **Open your browser**
-    Navigate to `http://localhost:4200/`.
-
-## ℹ️ Further help
+## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
----
-
-Thank you for checking out **MoviedbAngular**! If you have any questions or suggestions, feel free to open an issue or contact me.
-
-Best regards,  
-Joana D'Angeles
